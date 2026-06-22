@@ -475,6 +475,173 @@
   footer a { color: var(--pink); text-decoration: none; }
   footer a:hover { text-shadow: 0 0 8px var(--pink); }
 
+  /* ── TAB LABEL ── */
+  .tab-label {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    color: var(--text-dim);
+    padding: 0.8rem 1rem 0.2rem;
+    text-align: center;
+  }
+
+  .latest-badge {
+    display: inline-block;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 2px;
+    background: var(--pink);
+    color: var(--bg);
+    padding: 1px 5px;
+    margin-left: 6px;
+    vertical-align: middle;
+    position: relative;
+    top: -1px;
+    font-weight: bold;
+  }
+
+  /* ── BACK ISSUES BAR ── */
+  .back-issues-bar {
+    margin-top: 0.9rem;
+    border-top: 1px solid var(--surface2);
+    padding-top: 0.7rem;
+  }
+
+  .back-issues-label {
+    display: block;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--text-dim);
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+  }
+
+  .back-issues-btns {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .back-issue-btn {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
+    color: var(--purple);
+    border: 1px solid var(--purple);
+    background: transparent;
+    padding: 0.3rem 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-shadow: 0 0 6px var(--purple);
+  }
+
+  .back-issue-btn:hover {
+    color: var(--pink);
+    border-color: var(--pink);
+    text-shadow: 0 0 8px var(--pink);
+    background: var(--tab-active-bg);
+  }
+
+  /* ── FORM SECTION ── */
+  .form-section {
+    margin: 2rem 1rem 0;
+    padding: 2rem 1.5rem;
+    background: var(--surface);
+    border: 1px solid var(--purple);
+    box-shadow: 0 0 30px rgba(155,48,255,0.2), inset 0 0 60px rgba(10,0,8,0.6);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .form-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 40px,
+      rgba(155,48,255,0.03) 40px,
+      rgba(155,48,255,0.03) 41px
+    );
+    pointer-events: none;
+  }
+
+  .form-section-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    position: relative;
+  }
+
+  .form-section-header h2 {
+    font-family: 'Permanent Marker', cursive;
+    font-size: clamp(1.6rem, 5vw, 3rem);
+    color: var(--pink);
+    text-shadow: 0 0 20px var(--pink-glow), 3px 3px 0 var(--purple-dark);
+    margin-bottom: 0.5rem;
+  }
+
+  .form-section-header p {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    letter-spacing: 1px;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .form-section-header .form-tag {
+    display: inline-block;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    color: var(--purple);
+    border: 1px solid var(--purple);
+    padding: 0.2rem 0.8rem;
+    margin-bottom: 0.8rem;
+    text-shadow: 0 0 8px var(--purple);
+  }
+
+  .form-embed-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
+    border: 1px solid var(--pink);
+    box-shadow: 0 0 20px var(--pink-glow);
+  }
+
+  .form-embed-wrap iframe {
+    width: 100%;
+    height: 680px;
+    border: none;
+    display: block;
+    background: #fff;
+  }
+
+  .form-fallback-btn {
+    display: block;
+    text-align: center;
+    margin-top: 1rem;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    color: var(--pink);
+    text-decoration: none;
+    border: 1px solid var(--pink);
+    padding: 0.6rem 1.5rem;
+    width: fit-content;
+    margin: 1rem auto 0;
+    transition: all 0.2s;
+    text-shadow: 0 0 8px var(--pink);
+  }
+
+  .form-fallback-btn:hover {
+    background: var(--tab-active-bg);
+    box-shadow: 0 0 15px var(--pink-glow);
+  }
+
   @media (max-width: 600px) {
     nav { padding: 0.5rem 0.8rem; }
     .issue-tabs { margin: 0.5rem 0.5rem 0; }
@@ -485,6 +652,8 @@
     .pages-label { margin: 0.5rem 0.8rem; }
     .lightbox-nav { font-size: 2rem; padding: 0.3rem 0.6rem; }
     .toc-inner { padding: 1.2rem; }
+    .form-section { margin: 1.5rem 0.3rem 0; padding: 1.2rem 0.8rem; }
+    .form-embed-wrap iframe { height: 800px; }
   }
 </style>
 </head>
@@ -538,16 +707,17 @@
   </div>
 </div>
 
+<div class="tab-label">// SELECT AN ISSUE TO READ ↓</div>
 <div class="issue-tabs">
-  <button class="issue-tab active" data-issue="character-lore">CHARACTER LORE</button>
-  <button class="issue-tab" data-issue="issue1">#1 DRAGONFORM.EXE</button>
+  <button class="issue-tab active" data-issue="issue3">#3 LATE NIGHT SHENANIGANS <span class="latest-badge">LATEST</span></button>
   <button class="issue-tab" data-issue="issue2">#2 GHOSTMODE</button>
-  <button class="issue-tab" data-issue="issue3">#3 LATE NIGHT SHENANIGANS</button>
+  <button class="issue-tab" data-issue="issue1">#1 DRAGONFORM.EXE</button>
+  <button class="issue-tab" data-issue="character-lore">CHARACTER LORE</button>
 </div>
 
 <div class="reader-wrap">
 
-  <div class="issue-panel active" id="panel-character-lore">
+  <div class="issue-panel" id="panel-character-lore">
     <img src="images/Other/character%20list.png" class="issue-banner" alt="Character Lore Banner" onerror="this.style.display='none'">
     <div class="issue-header">
       <div class="issue-info">
@@ -589,7 +759,7 @@
     <div class="pages-container" id="pages-issue2"></div>
   </div>
 
-  <div class="issue-panel" id="panel-issue3">
+  <div class="issue-panel active" id="panel-issue3">
     <img src="images/issue3-latenightshenanigans/banner%203.png" class="issue-banner" alt="Issue 3 Banner" onerror="this.style.display='none'">
     <div class="issue-header">
       <div class="issue-cover">
@@ -598,6 +768,13 @@
       <div class="issue-info">
         <h3>#3 Late Night Shenanigans</h3>
         <p>3am hits different. The chaos has a schedule and it runs all night.</p>
+        <div class="back-issues-bar">
+          <span class="back-issues-label">// Each issue stands alone — or catch up from the start:</span>
+          <div class="back-issues-btns">
+            <button class="back-issue-btn" onclick="switchTab('issue1')">&larr; #1 DRAGONFORM.EXE</button>
+            <button class="back-issue-btn" onclick="switchTab('issue2')">&larr; #2 GHOSTMODE</button>
+          </div>
+        </div>
       </div>
     </div>
     <div class="pages-label">// PAGES</div>
@@ -605,6 +782,27 @@
   </div>
 
 </div>
+
+<!-- ── WANT TO BE IN THE COMIC? ── -->
+<section class="form-section" id="join-the-comic">
+  <div class="form-section-header">
+    <div class="form-tag">// OPEN SUBMISSIONS</div>
+    <h2>Want to be in the Comic?</h2>
+    <p>Think you belong in the Reality is Buffering universe? Fill out the form below and tell us about yourself — we might just write you in. No cap.</p>
+  </div>
+  <div class="form-embed-wrap">
+    <iframe
+      src="https://docs.google.com/forms/d/e/1FAIpQLSfXVzXyG97TTUpuFaZ7/viewform?embedded=true"
+      title="Want to be in the comic? Submission form"
+      loading="lazy"
+      allowfullscreen>
+      Loading form...
+    </iframe>
+  </div>
+  <a class="form-fallback-btn" href="https://forms.gle/XVzXyG97TTUpuFaZ7" target="_blank" rel="noopener">
+    ↗ OPEN FORM IN NEW TAB
+  </a>
+</section>
 
 <div class="glitch-deco">// N0_GL1TCH_JUST_V1BES //</div>
 
