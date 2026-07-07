@@ -642,6 +642,52 @@
     box-shadow: 0 0 15px var(--pink-glow);
   }
 
+  /* ── BONUS VIDEO EMBED ── */
+  .video-section {
+    margin: 1.5rem 1.5rem 2rem;
+    padding: 1.2rem 1.2rem 1.5rem;
+    background: var(--surface);
+    border: 1px solid var(--pink);
+    box-shadow: 0 0 20px var(--pink-glow);
+    text-align: center;
+  }
+
+  .video-section-tag {
+    display: inline-block;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    color: var(--pink);
+    border: 1px solid var(--pink);
+    padding: 0.2rem 0.8rem;
+    margin-bottom: 0.8rem;
+    text-shadow: 0 0 8px var(--pink);
+  }
+
+  .video-embed-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+    aspect-ratio: 16 / 9;
+    border: 1px solid var(--purple);
+    box-shadow: 0 0 20px rgba(155,48,255,0.3);
+    overflow: hidden;
+  }
+
+  .video-embed-wrap iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+  }
+
+  @media (max-width: 600px) {
+    .video-section { margin: 1rem 0.5rem 1.5rem; padding: 1rem 0.6rem 1.2rem; }
+  }
+
   @media (max-width: 600px) {
     nav { padding: 0.5rem 0.8rem; }
     .issue-tabs { margin: 0.5rem 0.5rem 0; }
@@ -757,6 +803,13 @@
     </div>
     <div class="pages-label">// PAGES</div>
     <div class="pages-container" id="pages-issue2"></div>
+
+    <section class="video-section">
+      <div class="video-section-tag">// BONUS CLIP</div>
+      <div class="video-embed-wrap">
+        <iframe src="https://www.youtube.com/embed/Nk-U4lJ27lw" title="Bonus Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </section>
   </div>
 
   <div class="issue-panel active" id="panel-issue3">
@@ -833,6 +886,8 @@ const CHARACTERS = [
   { banner: '20%20dreaux.png',      lore: '20%20dreaux.png',      name: 'Dreaux' },
   { banner: '21%20kajunlore1.png',  lore: '21%20kajunlore1.png',  name: 'Kajun' },
   { banner: '22%20savage.png',      lore: '22%20savage.png',      name: 'Savage Anarchy' },
+  { banner: '23%20hardup.png',      lore: '23%20hardup.png',      name: 'Hardup' },
+  { banner: '24%20chaparro.png',    lore: '24%20chaparro.png',    name: 'Chaparro' },
 ];
 
 const ISSUE_DATA = {
