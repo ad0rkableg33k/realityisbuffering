@@ -644,7 +644,9 @@
 
   /* ── BONUS VIDEO EMBED ── */
   .video-section {
-    margin: 1.5rem 1.5rem 2rem;
+    width: 100%;
+    max-width: 800px;
+    margin: 0.5rem 0;
     padding: 1.2rem 1.2rem 1.5rem;
     background: var(--surface);
     border: 1px solid var(--pink);
@@ -803,13 +805,6 @@
     </div>
     <div class="pages-label">// PAGES</div>
     <div class="pages-container" id="pages-issue2"></div>
-
-    <section class="video-section">
-      <div class="video-section-tag">// BONUS CLIP</div>
-      <div class="video-embed-wrap">
-        <iframe src="https://www.youtube.com/embed/Nk-U4lJ27lw" title="Bonus Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-    </section>
   </div>
 
   <div class="issue-panel active" id="panel-issue3">
@@ -1032,6 +1027,18 @@ function buildIssuePages() {
       wrap.appendChild(num);
       wrap.addEventListener('click', () => openLightbox(paths, i));
       container.appendChild(wrap);
+
+      if (key === 'issue3' && i === 1) {
+        const videoSection = document.createElement('section');
+        videoSection.className = 'video-section';
+        videoSection.innerHTML = `
+          <div class="video-section-tag">// BONUS CLIP</div>
+          <div class="video-embed-wrap">
+            <iframe src="https://www.youtube.com/embed/Nk-U4lJ27lw" title="Bonus Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        `;
+        container.appendChild(videoSection);
+      }
 
       if (tocLinks) {
         const link = document.createElement('a');
