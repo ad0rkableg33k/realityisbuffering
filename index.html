@@ -686,6 +686,11 @@
     display: block;
   }
 
+  .video-embed-wrap.shorts {
+    max-width: 340px;
+    aspect-ratio: 9 / 16;
+  }
+
   @media (max-width: 600px) {
     .video-section { margin: 1rem 0.5rem 1.5rem; padding: 1rem 0.6rem 1.2rem; }
   }
@@ -1028,6 +1033,18 @@ function buildIssuePages() {
       wrap.addEventListener('click', () => openLightbox(paths, i));
       container.appendChild(wrap);
 
+      if (key === 'issue3' && i === 0) {
+        const shortsSection = document.createElement('section');
+        shortsSection.className = 'video-section';
+        shortsSection.innerHTML = `
+          <div class="video-section-tag">// BONUS CLIP</div>
+          <div class="video-embed-wrap shorts">
+            <iframe src="https://www.youtube.com/embed/6FgtE5maNs0" title="Bonus Short" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        `;
+        container.appendChild(shortsSection);
+      }
+
       if (key === 'issue3' && i === 1) {
         const videoSection = document.createElement('section');
         videoSection.className = 'video-section';
@@ -1038,6 +1055,18 @@ function buildIssuePages() {
           </div>
         `;
         container.appendChild(videoSection);
+      }
+
+      if (key === 'issue3' && i === 2) {
+        const shortsSection2 = document.createElement('section');
+        shortsSection2.className = 'video-section';
+        shortsSection2.innerHTML = `
+          <div class="video-section-tag">// BONUS CLIP</div>
+          <div class="video-embed-wrap shorts">
+            <iframe src="https://www.youtube.com/embed/bdw7E6ctlgo" title="Bonus Short" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        `;
+        container.appendChild(shortsSection2);
       }
 
       if (tocLinks) {
