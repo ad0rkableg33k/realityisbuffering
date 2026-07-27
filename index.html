@@ -759,12 +759,18 @@
       <div class="toc-section-title">// #3 LATE NIGHT SHENANIGANS</div>
       <div class="toc-links" id="toc-issue3"></div>
     </div>
+    <div class="toc-section">
+      <div class="toc-section-title">// #4 GOLDIELOCKS & THE BIG BAD WOLF</div>
+      <div class="toc-links" id="toc-issue4"></div>
+    </div>
   </div>
 </div>
 
 <div class="tab-label">// SELECT AN ISSUE TO READ ↓</div>
+
 <div class="issue-tabs">
-  <button class="issue-tab active" data-issue="issue3">#3 LATE NIGHT SHENANIGANS <span class="latest-badge">LATEST</span></button>
+  <button class="issue-tab active" data-issue="issue4">#4 GOLDIELOCKS & THE BIG BAD WOLF <span class="latest-badge">LATEST</span></button>
+  <button class="issue-tab" data-issue="issue3">#3 LATE NIGHT SHENANIGANS</button>
   <button class="issue-tab" data-issue="issue2">#2 GHOSTMODE</button>
   <button class="issue-tab" data-issue="issue1">#1 DRAGONFORM.EXE</button>
   <button class="issue-tab" data-issue="character-lore">CHARACTER LORE</button>
@@ -814,7 +820,7 @@
     <div class="pages-container" id="pages-issue2"></div>
   </div>
 
-  <div class="issue-panel active" id="panel-issue3">
+  <div class="issue-panel" id="panel-issue3">
     <img src="images/issue3-latenightshenanigans/banner%203.png" class="issue-banner" alt="Issue 3 Banner" onerror="this.style.display='none'">
     <div class="issue-header">
       <div class="issue-cover">
@@ -822,7 +828,7 @@
       </div>
       <div class="issue-info">
         <h3>#3 Late Night Shenanigans</h3>
-        <p>3am hits different. The chaos has a schedule and it runs all night.</p>
+        <p>3am hits different. The chaos has a schedule and it runs all night. <em>(Ongoing — new pages dropping soon.)</em></p>
         <div class="back-issues-bar">
           <span class="back-issues-label">// Each issue stands alone — or catch up from the start:</span>
           <div class="back-issues-btns">
@@ -834,6 +840,26 @@
     </div>
     <div class="pages-label">// PAGES</div>
     <div class="pages-container" id="pages-issue3"></div>
+  </div>
+
+  <div class="issue-panel active" id="panel-issue4">
+    <img src="images/issue4-goldielocks/banner.png" class="issue-banner" alt="Issue 4 Banner" onerror="this.style.display='none'">
+    <div class="issue-header">
+      <div class="issue-info">
+        <h3>#4 Goldielocks & The Big Bad Wolf</h3>
+        <p>She sent the nuke. She found the fix. Head of Security, right hand lady, and one very suspicious alley meeting.</p>
+        <div class="back-issues-bar">
+          <span class="back-issues-label">// Each issue stands alone — or catch up from the start:</span>
+          <div class="back-issues-btns">
+            <button class="back-issue-btn" onclick="switchTab('issue1')">&larr; #1 DRAGONFORM.EXE</button>
+            <button class="back-issue-btn" onclick="switchTab('issue2')">&larr; #2 GHOSTMODE</button>
+            <button class="back-issue-btn" onclick="switchTab('issue3')">&larr; #3 LATE NIGHT SHENANIGANS</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pages-label">// PAGES</div>
+    <div class="pages-container" id="pages-issue4"></div>
   </div>
 
 </div>
@@ -932,6 +958,12 @@ const ISSUE_DATA = {
     pages: [
       'page1.png','page2.png','page3.png','page4.png',
       'page5.png','page6.png','page7.png','page8.png'
+    ]
+  },
+  'issue4': {
+    folder: 'images/issue4-goldielocks',
+    pages: [
+      'page1.png','page2.png','page3.png','page4.png'
     ]
   }
 };
